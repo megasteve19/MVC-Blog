@@ -1,0 +1,13 @@
+<section id="Posts">
+    <h1>Last Posts</h1>
+
+    <?php foreach($Variables as $Post): ?>
+
+    <article>
+        <h2><a href="?action=post&id=<?= $Post["Id"] ?>"><?= $Post["Title"] ?></a></h2>
+        <p><?= TruncateString(strip_tags($Post["Content"]), 512) ?></p>
+        <h4><?= FormatDate($Post["Date"]) ?></h4>
+    </article>
+
+    <?php endforeach; ?>
+</section>
